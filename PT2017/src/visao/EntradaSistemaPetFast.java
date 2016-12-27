@@ -68,6 +68,8 @@ public class EntradaSistemaPetFast extends javax.swing.JFrame {
         subMenuRelatorioAtendimento = new javax.swing.JMenuItem();
         subMenuRelatorioCliente = new javax.swing.JMenuItem();
         subMenuRelatorioPet = new javax.swing.JMenuItem();
+        menuMonitoria = new javax.swing.JMenu();
+        PetCamOnline = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         subMenuSobre = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
@@ -233,6 +235,24 @@ public class EntradaSistemaPetFast extends javax.swing.JFrame {
         menuRelatorios.add(subMenuRelatorioPet);
 
         jMenuBar1.add(menuRelatorios);
+
+        menuMonitoria.setBackground(new java.awt.Color(156, 116, 64));
+        menuMonitoria.setText("Monitoria");
+        menuMonitoria.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+
+        PetCamOnline.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, java.awt.event.InputEvent.SHIFT_MASK));
+        PetCamOnline.setBackground(new java.awt.Color(228, 196, 154));
+        PetCamOnline.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        PetCamOnline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/eye-icon.png"))); // NOI18N
+        PetCamOnline.setText("PetCam Online");
+        PetCamOnline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PetCamOnlineActionPerformed(evt);
+            }
+        });
+        menuMonitoria.add(PetCamOnline);
+
+        jMenuBar1.add(menuMonitoria);
 
         menuSobre.setBackground(new java.awt.Color(156, 116, 64));
         menuSobre.setText("Sobre");
@@ -406,8 +426,10 @@ public class EntradaSistemaPetFast extends javax.swing.JFrame {
 
     private void subMenuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuSobreActionPerformed
         // TODO add your handling code here:
+       
+        /*
         String tituloStatus;
-        tituloStatus = "Webcam Pets";
+        tituloStatus = "Sobre";
 
         TelaJavaCam camPet = new TelaJavaCam();
         camPet.setTitle(tituloStatus);
@@ -415,7 +437,7 @@ public class EntradaSistemaPetFast extends javax.swing.JFrame {
         add(camPet, JLayeredPane.DEFAULT_LAYER);
         camPet.setDefaultCloseOperation(1);
         camPet.setLocation(40, 50);
-        
+        */
       //  Cadastro.montaTelaAbout();
     }//GEN-LAST:event_subMenuSobreActionPerformed
 
@@ -489,6 +511,19 @@ public class EntradaSistemaPetFast extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuAgendarServicoActionPerformed
 
+    private void PetCamOnlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetCamOnlineActionPerformed
+        // TODO add your handling code here:
+        String tituloStatus;
+        tituloStatus = "Webcam Pets";
+
+        TelaJavaCam camPet = new TelaJavaCam();
+        camPet.setTitle(tituloStatus);
+        camPet.setVisible(true);
+        add(camPet, JLayeredPane.DEFAULT_LAYER);
+        camPet.setDefaultCloseOperation(1);
+        camPet.setLocation(40, 50);
+    }//GEN-LAST:event_PetCamOnlineActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -527,6 +562,7 @@ public class EntradaSistemaPetFast extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MenuProfissional;
+    private javax.swing.JMenuItem PetCamOnline;
     private javax.swing.JMenuItem SubMenuGestaoProfissional;
     private javax.swing.JMenuItem jMenuAgendarServico;
     private javax.swing.JMenuBar jMenuBar1;
@@ -535,6 +571,7 @@ public class EntradaSistemaPetFast extends javax.swing.JFrame {
     private javax.swing.JMenu menuAtendimento;
     private javax.swing.JMenu menuBox_Especialista;
     private javax.swing.JMenu menuCadastroCliente_Pet;
+    private javax.swing.JMenu menuMonitoria;
     private javax.swing.JMenu menuRelatorios;
     private javax.swing.JMenu menuSair;
     private javax.swing.JMenu menuSobre;

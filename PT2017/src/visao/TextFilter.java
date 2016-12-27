@@ -64,13 +64,20 @@ class TextFilter extends FileFilter {
                 return true;
             }
         }
+        
+         //filtra para abrir somente arquivos wbmp
+        if (i > 0 && i < s.length() - 1) {
+            if (s.substring(i + 1).toLowerCase().equals("wbmp")) {
+                return true;
+            }
+        }
 
         return false;
     }
 
     @Override
     public String getDescription() {
-        return "Aceita somente arquivos de imagem: jpg,jpeg,png,bmp ou gif.";
+        return "Aceita somente arquivos de imagem: jpg, jpeg, png, bmp, wbmp ou gif.";
     }
 
 }

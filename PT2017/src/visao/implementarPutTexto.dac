@@ -1,0 +1,56 @@
+ /**
+         * métod para colocar texto na imagem --- não esta ainda funcionando!
+         * @param Foto 
+         */
+        public void putTexto(String Foto) {
+
+            Mat source = Highgui.imread("digital_image_processing.jpg", Highgui.CV_LOAD_IMAGE_COLOR);
+           
+            Mat source = Highgui.imread(Foto, Highgui.CV_LOAD_IMAGE_COLOR);
+            Mat destination = new Mat(source.rows(), source.cols(), source.type());
+                    
+            try {
+
+                System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+                Core.putText(
+                        frame,
+                        "Tutorialspoint.com",
+                        new Point(frame.rows() / 2, frame.cols() / 2),
+                        20,
+                        new Scalar(255));
+             Highgui.imwrite(im, frame);
+
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+
+            }
+ 
+            /*       
+            importorg.opencv.core.Core;
+            importorg.opencv.core.Mat;
+            importorg.opencv.highgui.Highgui;
+            importorg.opencv.imgproc.Imgproc;
+
+             
+
+        public class Main {
+
+            public static void main(String[] args) {
+
+                try {
+                    System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+                    Mat source = Highgui.imread("digital_image_processing.jpg", Highgui.CV_LOAD_IMAGE_COLOR);
+                    Mat destination = new Mat(source.rows(), source.cols(), source.type());
+
+                    Core.putText(source, "Tutorialspoint.com", new Point(source.rows() / 2, source.cols() / 2), Core.FONT_ITALIC, new Double(1), new Scalar(255));
+
+                    Highgui.imwrite("watermarked.jpg", source);
+
+                } catch (Exception e) {
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }
+        }
+        */
+    
+ }//final putTexto
